@@ -51,11 +51,11 @@ renderPlot({
 })
 ```
 
-## Slide with Bullets
+## Clusteranalysen sind explorativ
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+- Sie können angewendet werden, wenn ...
+- ... ich schon eine Ahnung habe, welche Gruppen sich ergeben.
+- ... ich wissen möchte, ob sich der Datensatz irgendwie gruppiert.
 
 
 
