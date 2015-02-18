@@ -4,4 +4,10 @@
 *-Ex.R
 # R data files from past sessions
 .Rdata
+
 .Rproj.user
+packrat/lib*/
+packrat/src/
+.md
+.html
+
