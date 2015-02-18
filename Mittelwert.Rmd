@@ -1,0 +1,43 @@
+---
+title: "Mittelwert"
+output: html_document
+---
+
+##Mittelwert {m}
+meanmath.stat.
+average
+mean value
+average value
+midpointmath.stat.
+Mittelwert {m} <MW>
+mean score
+arithmetischer Mittelwert {m}
+arithmetic mean (value)
+arithmetic averagemath.stat.
+geometrischer Mittelwert {m} <GM>
+geometric meanmath.stat.
+gewichteter Mittelwert {m}
+weighted average
+gewogener Mittelwert {m}
+mean average
+gleitender Mittelwert {m}
+rolling meanmath.stat.
+moving averagemath.stat.
+harmonischer Mittelwert {m}
+harmonic mean <HM>math.
+mengengewichteter Mittelwert {m}
+volume-weighted mean value
+quadratischer Mittelwert {m}
+root mean square
+quadratischer Mittelwert {m} <QM, QMW>
+quadratic mean <QM>electr.stat.
+Mittelwert bilden (aus)
+to average (over)
+einfacher gleitender Mittelwert {m}
+simple moving average <SMA>
+exponentiell geglätteter Mittelwert {m}
+exponential moving average <EMA>
+Rückkehr {f} zum Mittelwert
+mean-revertingmath.
+Mittelwert null, Varianz eins
+zero mean, unit variancemath.stat.

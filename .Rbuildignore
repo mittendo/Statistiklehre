@@ -1,4 +1,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+<<<<<<< HEAD
+=======
 ^packrat/
 ^\.Rprofile$
+>>>>>>> 80abfedbd9d2f8dda06da078bc7dccf040ea22d0
