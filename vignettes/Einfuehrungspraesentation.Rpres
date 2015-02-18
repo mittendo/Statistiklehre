@@ -1,0 +1,43 @@
+Einfuehrungspraesentation
+========================================================
+author: "Dr. Volker Mittendorf"
+date: "7. April 2015"
+
+Gliederung
+==============
+
+
+Seminarinhalt
+=======================
+
+Test 1234
+
+Formales zum Seminar
+========================================================
+
+For more details on authoring R presentations click the
+**Help** button on the toolbar
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+Qualitativ vs. quantitativ
+========================================================
+
+```{r}
+summary(cars)
+```
+
+Die "Himmicanes Studie" - warum sie wissenschaftlich vorbildlich ist
+========================================================
+* Legt Daten offen
+* Ist reproduzierbar und nachvollziehbar
+* Macht eine wissenschaftliche Analyse wie aus dem Lehrbuch
+
+
+Die "Himmicanes Studie" - warum sie methodisch schlecht ist
+========================================================
+* Macht eine wissenschaftliche Analysie wie aus dem Lehrbuch für Experimente
+* Berücksichtigt nicht Studiendesign
+* Endet da, wo die Skepsis anfangen muss
