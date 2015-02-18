@@ -1,0 +1,8 @@
+---
+title: "Mittelwert"
+output: html_document
+---
+
+Mittelwerte (kurz auch nur Mittel, in der Statistik oft auch Durchschnitt statt arithmetisches Mittel) treten in der Mathematik und insbesondere in der Statistik in inhaltlich unterschiedlichen Kontexten auf. Allgemein gilt, dass jedem Mittelwert eine Vorschrift zugrunde liegt, mit der man aus zwei oder mehr Zahlen eine weitere berechnet, die zwischen den gegebenen Zahlen liegt.
+
+In der Statistik wird außerdem oft als Mittelwert der Erwartungswert angedeutet, ein so genannter Lageparameter einer Häufigkeits- oder Wahrscheinlichkeitsverteilung, der die Lage der Elemente einer Stichprobe oder Grundgesamtheit in Bezug auf die Messskala beschreibt.
