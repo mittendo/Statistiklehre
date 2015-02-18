@@ -10,12 +10,14 @@ When you click the **Knit HTML** button a web page will be generated that includ
 
 
 ```{r}
-summary(swiss)
+ffpfsi13 <- read.csv("~/Desktop/ffpfsi13.csv", sep=";", dec=",")
+summary(ffpfsi13)
 ```
 
 ## You can also embed plots, for example:
 
 ```{r fig.width=7, fig.height=6}
-plot(swiss$Fertility, swiss$Education)
+FailedStates<-subset(ffpfsi13, Total >= 90)
+plot(FailedStates$Total, FailedStates$Refugees.and.IDPs)
 ```
 
