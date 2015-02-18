@@ -6,17 +6,16 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 When you click the **Knit HTML** button a web page will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
 
-### Here is a standard dataset of R
-
+### The Fund for Peace Failed States Index 2013
 
 ```{r}
 ffpfsi13 <- read.csv("~/Desktop/ffpfsi13.csv", sep=";", dec=",")
 summary(ffpfsi13)
 ```
 
-## You can also embed plots, for example:
+## The following plot will show a correlation between the amount of Refugees and the total of the Failed States Index:
 
-```{r fig.width=7, fig.height=6}
+```{r fig.width=10, fig.height=10}
 FailedStates<-subset(ffpfsi13, Total >= 90)
 plot(FailedStates$Total, FailedStates$Refugees.and.IDPs)
 ```
