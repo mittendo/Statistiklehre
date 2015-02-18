@@ -8,3 +8,5 @@
 .Rproj.user
 packrat/lib*/
 packrat/src/
+.md
+.html
