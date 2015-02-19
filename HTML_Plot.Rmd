@@ -1,0 +1,20 @@
+Summary and Plot of the Fund For Peace 2013 Index
+========================================================
+
+This are my first steps on R markdown language, so I will show an arbitrary plot and summary of a dataset related to political science.
+
+
+### The Fund for Peace Failed States Index 2013
+
+```{r}
+ffpfsi13 <- read.csv("~/Desktop/ffpfsi13.csv", sep=";", dec=",")
+summary(ffpfsi13)
+```
+
+## The following plot will show a correlation between the amount of Refugees and the total of the Failed States Index:
+
+```{r fig.width=10, fig.height=10}
+FailedStates<-subset(ffpfsi13, Total >= 90)
+plot(FailedStates$Total, FailedStates$Refugees.and.IDPs)
+```
+
