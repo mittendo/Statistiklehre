@@ -10,3 +10,4 @@ packrat/lib*/
 packrat/src/
 .md
 .html
+inst/doc

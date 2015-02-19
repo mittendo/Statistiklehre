@@ -1,0 +1,48 @@
+---
+title: "Clusteranalyse"
+author: "Volker Mittendorf"
+date: "22.06.2014"
+output:
+  ioslides_presentation:
+    css: http://www.politikwissenschaft.uni-wuppertal.de/fileadmin/politikwissenschaft/1._Die_Politikwissenschaft/Organisation_und_Struktur/Mittendorf/Pres_FS.css
+    incremental: true
+runtime: shiny
+
+---
+
+## Clusteranalyse
+```{r, echo=FALSE, results='hide'}
+library(cluster)
+
+```
+
+- In der Regel: Exploratives Verfahren
+- Fragestellung: Gibt es in den zu Grunde liegenden Daten Fälle, die einander ähnlich sind?
+- Methode: Verschiedene Algorithmen zur Aufdeckung der Ähnlichkeiten
+
+## Beispiel für verschiedene Clusteralgorithmen
+
+```{r, echo=FALSE}
+inputPanel(
+#     radioButtons("Verfahren", "Verfahren",
+#                  list("Agglomerativ" = "agnes",
+#                       "Teilung" = "diana")),
+    selectInput("Verfahren", "Wähle ein Verfahren", choices=c("Agglomerativ", "Teilung")),
+
+      conditionalPanel(
+        condition = 'input.Verfahren=="Agglomerativ"',    
+        selectInput("Linkage", "Wähle ein Linkage-Verfahren", choices=c("single", "complete", "average"))
+    ),
+    br(),
+    selectInput("Metrik", "Wähle ein Distanzmaß:", choices=c("manhattan", "euclidean")),
+    
+    checkboxInput("Standard", "Standardisiere Inputdaten", TRUE)
+)
+
+renderPlot({
+
+    data(votes.repub)
+    agn1 <- agnes(votes.repub, metric = input$Metrik, method=input$Linkage, stand = input$Standard)
+    dian1<-diana(votes.repub, metric=input$Metrik, stand=input$Standard)
+    if(input$Verfahren=="Agglomerativ")
+    plot(agn1, main=paste("Agglomeratives Clustern, ",paste(toupper(substring(input$Linkage, 1,1)), substring(input$Linkage, 2), sep="", collapse=" "), "-Linkage-Verfahren", sep="")) else    plot(dian1, main=paste("Teilungsverfahren ",  sep=""))
