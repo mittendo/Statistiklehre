@@ -1,0 +1,195 @@
+\usepackage[utf8]{inputenc}
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION
+create_table <- function() {
+  city <- rmultinom(1, 100, prob=c(0.2, 0.4, 0.3, 0.1))
+  suburb <- rmultinom(1, 150, prob=c(0.1, 0.2, 0.4, 0.3))
+  matrix(c(city, suburb), nrow = 4,
+         dimnames = list(Bewertung = c("sehr gut", "gut", "schlecht", "sehr schlecht"),
+           Wohnlage = c("Innenstadt", "Außenstadtteile")))
+}
+public <- create_table()
+variant <- sample(1:3, 1)
+margins <- list(1, 2, NULL)
+prop_public <- round(100*prop.table(public, margins[[variant]]), digits = 1) 
+
+while (length(prop_public) != length(unique(prop_public))) {
+  public <- create_table()
+  prop_public <- round(100*prop.table(public, margins[[variant]]), digits = 1) 
+}
+
+## QUESTION/ANSWER GENERATION
+questions <- character(5)
+solutions <- logical(5)
+explanations <- character(5)
+
+## 1. total/rows/columns percentage
+percentage <- c("Zeilen", "Spalten", "Gesamt")
+rowsums <- c("Zeilensummen", "Spaltensummen", "Gesamtsummen")
+variant1 <- sample(1:3, 1)
+questions[1] <- paste("Die Anteilstabelle enthält ", percentage[variant1], "-Prozente.")
+solutions[1] <- variant1 == variant
+explanations[1] <- if (variant1 == variant) paste("Die ", rowsums[variant1], 
+                         " ergeben ungefähr gleich 100 (Bis auf mögliche Rundungsfehler.") else 
+paste("Die ", rowsums[variant1], "ergeben nicht 100.")
+
+## 2. interprete total/row/column percentage
+if (runif(1) > 0.5) {
+  questions[2] <- "Die Tabelle der Anteilswerte gibt die Verteilung nach Orten für jedes Zufriedenheitsniveau an."
+  solutions[2] <- variant == 1
+  explanations[2] <- if (solutions[2]) "Die Zeilensummen ergeben 100 (bis auf Rundungsfehler)." else 
+                     "Die Zeilensummen ergeben nicht 100."
+} else {
+  questions[2] <- "Die Tabelle der Anteilswerte gibt das Zufriedenheitsniveau für jeden Ortstyp an."
+  solutions[2] <- variant == 2
+  explanations[2] <- if (solutions[2]) "Die Spaltensummen ergeben  100 (bis auf mögliche Rundungsfehler)." else 
+                     "Die Spaltensummen ergeben nicht 100."
+}
+
+## 3. Interpretation row percentage
+question <- sample(1:3, 1)
+if (question == 1) {
+  questions[3] <- if (runif(1) > 0.5) paste("Der Wert in Zeile~1 und Spalte~1 in der Tabelle der Anteilswerte zeigt an, dass", prop_public[1,1], 
+  "Prozent derjenigen, die den ÖPNV für sehr gut halten,",
+  "in der Innenstadt wohnen.") else paste("Der Wert in Zeile~4 und Spalte~2 in der Tabelle der Anteilswerte zeigt an, dass", prop_public[4,2], 
+  "Prozent derjenige, die den ÖPNV als sehr schlecht empfinden, in den Außenstadtteilen wohnen.")
+  solutions[3] <- variant == 1
+  explanations[3] <- if (solutions[3]) "Dies ist die korrekte Interpretation der Zeilenanteilswerte." else 
+  paste("Dies ist eine Interpretation der Zeilenanteile, aber die Tabelle gibt  ", 
+        percentage[variant], "Anteile an.")
+} else if (question == 2) {
+  questions[3] <- paste("Der Wert in Zeile~1 und Spalte~2 in der Tabelle der Anteilswerte zeigt an, dass", prop_public[1,2], 
+                        "Prozent derjenigen, die in den Außenstadtteilen wohnen, den ÖPNV als",
+                        "sehr gut einschätzen.")
+  solutions[3] <- variant == 2
+  explanations[3] <- if (solutions[3]) "Dies ist die korrekte Interpretation der Spaltenanteilswerte." else 
+  paste("Dies ist eine Interpretation der Zeilenanteilswerte, aber die Tabelle zeigt",  
+        percentage[variant], "Anteile an.")
+} else {
+  questions[3] <- paste("Der Wert in Zeile~4 und Spalte~1 in der Tabelle der Anteilswerte zeigt an, dass", prop_public[4,1], 
+                         "Prozent der Antwortenden in der Innenstadt wohnen und den ÖPNV",
+                        "als sehr schlecht empfinden.")
+  solutions[3] <- variant == 3
+  explanations[3] <- if (solutions[3]) "Dies ist die korrekte Interpretation der Tabelle der Gesamtanteile." else 
+  paste("Dies ist eine Interpretation der Gesamtanteile, aber die Tabelle zeigt ", 
+        percentage[variant], "Anteile an.")
+} 
+
+## 4. Interpretation column percentages
+question <- sample(1:3, 1)
+if (question == 1) {
+  if (runif(1) > 0.5) {
+    questions[4] <- paste("Der Wert in Zeile~2 und Spalte~1 in der Tabelle der Anteilswerte gibt an, dass", prop_public[2,1], 
+                          " Prozent der in der Innenstadt wohnenden Teilnehmer den ÖPNV mit gut bewerteten.")
+  } else {
+    questions[4] <- paste("Der Wert in Zeile~3 und Spalte~2 in der Tabelle der Anteilswerte zeigt, dass", prop_public[3,2], 
+                          "Prozent der Teilnehmenden, die in den Außenstadtteilen wohnen den ÖPNV als",
+                          "schlecht bewerteten.")
+  } 
+  solutions[4] <- variant == 2
+  explanations[4] <- if (solutions[4]) "Dies ist die Korrekte Interpretation der Spaltenanteile." 
+  else paste("Dies ist eine Interpretation der Spaltenanteile, aber die Tabelle zeigt ", percentage[variant], 
+             "Anteile an.")
+
+} else if (question == 2) {
+  questions[4] <- paste("Der Wert in Zeile~2 und Spalte~2 in der Tabelle der Anteilswerte gibt an, dass:", prop_public[2,2], 
+                        "Prozent derjenigen, die den ÖPNF als gut bewerteten",
+                        "in den Außenstadtteilen wohnen.")
+  solutions[4] <- variant == 1
+  explanations[4] <- if (solutions[4]) "Dies ist die korrekte Interpretation der Tabelle der Zeilenanteile."
+  else paste("Dies ist eine interpretation der Zeilenanteile, aber die Tabelle zeigt  ", 
+             percentage[variant], "Anteile an.")
+} else {
+  questions[4] <- paste("Der Wert in Zeile~3 und Spalte~1 in der Tabelle der Anteilswerte zeigt an, dass", prop_public[3,1], 
+                        "Prozent der Teilnehmenden in der Innenstadt wohnen und den ÖPNV als",
+                        "schlecht empfinden.")
+  solutions[4] <- variant == 3
+  explanations[4] <- if (solutions[4]) "Dies ist die korrekte Interpretation der Gesamtanteile." else 
+  paste("Dies ist die Interpretation der Gesamtanteile, aber die Tabelle zeigt ", percentage[variant], "Anteile an.")
+} 
+
+## 5. Calculation row/column percentages
+question <- sample(1:3, 1)
+if (question == 1) {
+  questions[5] <- paste("Die Tabelle der Anteilswerte kann ohne weitere Information aus der ursprünglichen Kreuztabelle konstruiert werden:",
+                        "Die Anteile werden für jeweils für jede Zeile berechnet.")
+  solutions[5] <- variant == 1
+  explanations[5] <- paste("Die Auswertung fragt nach Anteilen in Bezug auf die Zeilensummen. ", ifelse(!solutions[5], paste("Allerdings werden die  ", 
+                     percentage[variant], "-Anteile dargestellt."), ""))
+} else if (question == 2) {
+  questions[5] <- paste("Die Tabelle der Anteilswerte kann ohne weitere Information aus der ursprünglichen Kreuztabelle konstruiert werden:",
+                        "Anteile werden für jede Spalte berechnet.")
+  solutions[5] <- variant == 2
+  explanations[5] <- paste("Die Auswertung fragt nach Anteilen in Bezug auf die Spaltensummen.", 
+                           ifelse(!solutions[5], paste("Allerdings werden die  ", 
+                     percentage[variant], "-Anteile dargestellt."), ""))
+} else {
+  questions[5] <- paste("Die Tabelle der Anteilswerte kann ohne weitere Information aus der ursprünglichen Kreuztabelle konstruiert werden:",
+                        "Jeder Wert wird in Bezug auf die Gesamtsumme berechnet.")
+  solutions[5] <- variant == 3
+  explanations[5] <- paste("Die Auswertung fragt nach  Anteilen in Bezug auf die Gesamtzahlan.", 
+                           ifelse(!solutions[5], paste("Allerdings stellt die Tabelle ", 
+                     percentage[variant], "-Anteile dar."), ""))
+} 
+
+## permute order of solutions/questions
+o <- sample(1:5)
+questions <- questions[o]
+solutions <- solutions[o]
+explanations <- explanations[o]
+@
+
+\begin{question}
+  In einer Kleinstadt wird die Zufriedenheit der Bürgerinnen und Bürger mit dem 
+  öffentlichen Personennahverkehr (ÖPNV) untersucht. Eine der
+  Forschungsfragestellungen lautet, ob  Einwohnerinnen und Einwohner der Innenstadt
+  zufriedener sind mit dem ÖPNV als diejenigen, die in den Außenstadtteilen wohnen.
+
+  Eine Umfrage mit $n=250$ Antworten führt zu folgender Kreuztabelle:
+<<echo=FALSE>>= 
+public
+@
+
+Hieraus wurde folgende Tabelle mit Anteilswerten ermittelt:
+
+<<echo=FALSE>>= 
+print(format(prop_public, nsmall = 1, justify = "right", 
+             width = max(nchar(colnames(prop_public)))), quote = FALSE)
+@
+
+Welche der folgenden Aussagen sind korrekt?
+\begin{answerlist}
+  \item \Sexpr{questions[1]}
+  \item \Sexpr{questions[2]}
+  \item \Sexpr{questions[3]}
+  \item \Sexpr{questions[4]}
+  \item \Sexpr{questions[5]}
+\end{answerlist}
+\end{question}
+
+%% SOLUTIONS
+\begin{solution}
+<<echo=FALSE>>=
+interpretation <- c("bedingter Anteil für Ort für gegebenes Zufriedenheitsniveau.",
+                    "bedingter Anteil für Zufriedenheitsniveau bei gegebenem Ort.",
+                    "Anteile für jeweiligen Ort und Zufriedenheitsniveau.")
+@ 
+
+In der Tabelle der Anteilswerte, beträgt die Summe  \Sexpr{rowsums[variant]} bei ungefähr 100 Prozent
+(Abweichungen durch Rundungsfehler). Daher zeigt die Tabelle
+\Sexpr{percentage[variant]} Prozentpunkte, d.h.,
+\Sexpr{interpretation[variant]}
+
+\begin{answerlist}
+  \item \Sexpr{mchoice2text(solutions[1])}: \Sexpr{explanations[1]}
+  \item \Sexpr{mchoice2text(solutions[2])}: \Sexpr{explanations[2]}
+  \item \Sexpr{mchoice2text(solutions[3])}: \Sexpr{explanations[3]}
+  \item \Sexpr{mchoice2text(solutions[4])}: \Sexpr{explanations[4]}
+  \item \Sexpr{mchoice2text(solutions[5])}: \Sexpr{explanations[5]}
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Multiple choice}

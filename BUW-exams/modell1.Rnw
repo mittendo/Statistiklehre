@@ -1,0 +1,63 @@
+\usepackage[utf8]{inputenc}
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION
+
+## QUESTION/ANSWER GENERATION
+questions <- character(5)
+solutions <- logical(5)
+explanations <- character(5)
+
+
+questions[1]<-"Ein Modell ist als vereinfachte Beschreibung der Realität zu verstehen.
+Genauer: Ein Modell ist die Beschreibung eines quantitativ erfassbaren Phänomens."
+   solutions[1]<-TRUE
+   explanations[1]<-"Modelle versuchen, die über die Sinne wahrnehmbare Realität erfassbar zu machen. Dabei wird versucht, allgemeine Erklärungen zu finden und zu erklären, wobei Vereinfachungen in Kauf genommen werden."
+
+questions[2]<- "Ein Modell ist die korrekte, d.h. fehlerfreie Wiedergabe der Realität."
+solutions[2]<-FALSE
+explanations[2]<- "Auf Zufälligkeiten und in allen Einzelheiten realitätsgetreue Darstellung wird dabei verzichtet."
+  questions[3]<- "In stochastischen Modellen kann man nur Wahrscheinlichkeitsaussagen über Eintreten gewisser Ereignisse machen."
+solutions[3]<-TRUE
+explanations[3]<-"Stochastische Modelle zeichnen sich dadurch aus, dass Sie das systematische Auftreten von Ereignissen erfassen und dabei das zufällige Variieren des Eintretens von Ereignissen erlauben. "
+questions[4]<- "Treten bei den in einem Modell betrachteten Phänomenen zufällige Schwankungen auf, so ist ein stochastisches Modell zur Beschreibung erforderlich."
+solutions[4]<-TRUE
+explanations[4]<-"Nicht alles, was wir beobachten können, ist exakt bestimmt (deterministisch). Wenn Variationen auftreten, dann ist ein stoachstisches Modell erforderlich."
+questions[5]<- "Man spricht von deterministischen Modellen, wenn sich die mit dem Modell verbundene Unsicherheit quantifizieren und somit steuern (determinieren) lässt."
+solutions[5]<-FALSE
+explanations[5]<-"Unsicherheiten werden mit dem Zufälligen Teil des (stochastischen) Modells quantifiziert. Deterministisch bedeutet, dass Ereignisse mit Sicherheit eintreten."           
+## permute order of solutions/questions
+o <- sample(1:5)
+questions <- questions[o]
+solutions <- solutions[o]
+explanations <- explanations[o]  
+@
+
+\begin{question}
+  Deterministische und stochastische Modelle: Welche der folgenden Aussagen sind richtig?
+\setkeys{Gin}{width=0.7\textwidth}
+
+\begin{answerlist}
+  \item \Sexpr{questions[1]}
+  \item \Sexpr{questions[2]}
+  \item \Sexpr{questions[3]}
+  \item \Sexpr{questions[4]}
+  \item \Sexpr{questions[5]}
+\end{answerlist}
+\end{question}
+
+%% SOLUTIONS
+\begin{solution}
+\begin{answerlist}
+  \item \Sexpr{mchoice2text(solutions[1])}: \Sexpr{explanations[1]}
+  \item \Sexpr{mchoice2text(solutions[2])}: \Sexpr{explanations[2]}
+  \item \Sexpr{mchoice2text(solutions[3])}: \Sexpr{explanations[3]}
+  \item \Sexpr{mchoice2text(solutions[4])}: \Sexpr{explanations[4]}
+  \item \Sexpr{mchoice2text(solutions[5])}: \Sexpr{explanations[5]}
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Multiple choice}
+

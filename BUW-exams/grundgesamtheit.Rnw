@@ -1,0 +1,65 @@
+\usepackage[utf8]{inputenc}
+
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION
+
+## QUESTION/ANSWER GENERATION
+questions <- character(5)
+solutions <- logical(5)
+explanations <- character(5)
+
+questions[1]<-    "Als Grundgesamtheit wird die Menge von Objekten, Personen oder anderen Dingen bezeichnet, über die man Informationen gewinnen möchte."
+
+solutions[1]<-TRUE
+
+explanations[1]<-"Ist per definitionem wahr."
+
+questions[2]<- "Eine Stichprobe aus einer Grundgesamtheit sollte repräsentativ sein,
+    d.h. sie sollte die Verhältnisse in der Grundgesamtheit in etwa wiedergeben."
+
+solutions[2]<-TRUE
+explanations[2]<- "Ansonsten sind verzerrte bzw. systematische Abweichungen von der Grundgesamtheit zu erwarten."
+
+questions[3] <- "Statistische Aussagen über eine Grundgesamtheit sind nur dann
+    möglich, wenn man alle Elemente der Grundgesamtheit beobachten kann."
+
+solutions[3]<-FALSE
+explanations[3]<-"Die Tatsache, dass nicht alle Elemente beobachtbar sind (z.B. nicht alle deutschen für Wahlen befragt werden können) ist in der Regel der Grund für inferenzstatistische Untersuchungen."
+
+questions[4]<- "Je größer die Stichprobe ist, desto genauer sind die Informationen, die aus ihr gezogen werden können."
+
+solutions[4]<-TRUE
+explanations[4]<-"Der zufällige Fehler wird mit der Größe der Stichprobe kleiner -> Gesetz der großen Zahl."
+    
+questions[5]<-"Aussagen, die aus einer Stichprobe geschlossen werden, dürfen niemals auf die Grundgesamtheit verallgemeinert werden" 
+
+solutions[5]<-FALSE
+
+explanations[5]<-"Inferenzstatistische Aussagen werden unter der Annahme getroffen, dass sie auf die Grundgesamtheit zutreffen. Dabei ist jedoch zu berücksichtigen, dass diese Aussagen nicht logisch wahr sind, sondern nur vorläufig gelten. Es sollte daher unbedingt, das Maß der jeweiligen Unsicherheit angegeben werden."
+
+@
+
+\begin{question}
+Grundgesamtheit und Stichprobe: Wahr oder Falsch?
+
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(paste(questions))
+@
+
+\end{question}
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "True", "False"), "}", sep = ""),
+  explanations)
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Multiple Choice}
+%% \extol{}

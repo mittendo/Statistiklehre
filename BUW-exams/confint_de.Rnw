@@ -1,0 +1,38 @@
+\usepackage[utf8]{inputenc}
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION
+n <- sample(50:150, 1)
+y <- rnorm(n, runif(1, 100, 200), runif(1, 10, 15))
+
+## QUESTION/ANSWER GENERATION
+Mean <- round(mean(y), digits = 1)
+Var <- round(var(y), digits = 1)
+sd <- sqrt(Var/n)
+LB <- round(Mean - 1.96*sd, 3)
+UB <- round(Mean + 1.96*sd, 3)
+@
+
+\begin{question}
+  Die täglichen Ausgaben von Touristen in Wuppertal werden untersucht. Eine Umfrage unter $\Sexpr{n}$ Touristen wird durchgeführt. Es zeigt sich, dass ein Tourist/eine Touristin im Durchschnitt $\Sexpr{Mean}$ EUR ausgeibt. Die Varianz der ermittelten Verteilung 
+  $s^2_{n-1}$ beträgt $\Sexpr{Var}$.
+  
+  Ermitteln Sie das  $95\%$ Konfidenzintervall für die durchschnittlichen täglichen Ausgaben (in EUR) für Touristen.
+\end{question}
+
+%% SOLUTION
+\begin{solution}
+  Das $95\%$ Konfidenzintervall für die Durchschnittsausgaben $\mu$ ist gegeben durch:
+\begin{eqnarray*}
+&   & \left[\bar{y} \, - \, 1.96\sqrt{\frac{s_{n-1}^2}{n}}, \; 
+  \bar{y} \, + \, 1.96\sqrt{\frac{s_{n-1}^2}{n}}\right] \\
+& = & \left[ \Sexpr{Mean} \, - \, 1.96\sqrt{\frac{\Sexpr{Var}}{\Sexpr{n}}}, \;
+             \Sexpr{Mean} \, + \, 1.96\sqrt{\frac{\Sexpr{Var}}{\Sexpr{n}}}\right] \\
+& = & \left[\Sexpr{LB}, \, \Sexpr{UB}\right].
+\end{eqnarray*}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{LB}}{\Sexpr{UB}}
+%% \exname{Konfidenzintervall}
+%% \extol{0.01}

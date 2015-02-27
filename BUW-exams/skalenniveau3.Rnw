@@ -1,0 +1,45 @@
+\usepackage[utf8]{inputenc}
+
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION
+
+## QUESTION/ANSWER GENERATION
+questions <- character(5)
+solutions <- logical(5)
+explanations <- character(5)
+
+questions<-c(
+  'Sagt Ihnen das Wort ,,Plattdeutsch“ oder auch ,,Niederdeutsch” etwas? – Anwort: Ja/Nein', 
+  'Wie gut können Sie Plattdeutsch verstehen? – Antwort: sehr gut, gut, mäßig, nur einige Wörter, gar nicht', 
+  'Wie oft hören Sie etwas auf Platt in Ihrem Alltag? – Antwort: sehr oft, oft, manchmal, eher selten, nie', 
+  'Mit wem sprechen Sie heutzutage Platt, wenn auch nur gelegentlich? – Antwort: mit dem Ehepartner/Lebenspartner, den Kindern, den Eltern, ...', 
+  '(Nur an die, die Plattdeutsch gelernt haben.) Wie alt waren Sie, als Sie Plattdeutsch gelernt haben? – Antwort: Alter')
+
+solutions<-c(F,T,T,F,F)
+
+explanations<-c()
+@
+
+\begin{question}
+Das Institut für Niederdeutsche Sprache ließ im Jahr 2007 eine Umfrage über die Verbreitung der plattdeutschen Sprache durchführen. Geben Sie bei den folgenden dort u.a. gestellten Fragen an, ob es sich um ordinal skalierte Antworten handelt.
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(paste(questions))
+@
+
+\end{question}
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "True", "False"), "}", sep = ""),
+  explanations)
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Multiple Choice}
+%% \extol{}

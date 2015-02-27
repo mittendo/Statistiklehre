@@ -1,0 +1,33 @@
+\usepackage[utf8]{inputenc}
+
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION
+
+## QUESTION/ANSWER GENERATION
+questions <- character(1)
+solutions <- logical(1)
+explanations <- character(1)
+
+questions[1]<-"Unterschiede?"
+solutions[1]<-"Auch die Diskursanalyse benutzt wie die qualitative Inhaltsanalyse und die sozialwissenschaftliche Hermeneutik interpretative Verfahren, strebt aber stärker die Kontextualisierung von Redebeiträgen, Stellungnahmen, Programmschriften etc. in übergeordnete Diskussionslinien und Machtkonstellationen an (Keller 2004). "
+explanations[1]<-''
+
+@
+
+\begin{question}
+Qualitative Methoden: Nennen und Erläutern Sie kurz (3-4 Sätze) einen wesentlichen Unterschied zwischen diskursanalytischen und hermeneutischen Methoden der Datenanalyse.
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(paste(questions))
+@
+
+
+\end{question}
+
+%% SOLUTIONS
+
+%% META-INFORMATION
+%% \extype{string}
+%% \exsolution{Testantwort}
+%% \exname{Unterschied Diskurs Hermeneutik}
+%% \extol{}
+%% \expoints{4}

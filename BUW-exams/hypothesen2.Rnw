@@ -1,0 +1,62 @@
+\usepackage[utf8]{inputenc}
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION
+
+## QUESTION/ANSWER GENERATION
+questions <- character(5)
+solutions <- logical(5)
+explanations <- character(5)
+
+
+questions[1]<-"Der Vorsitzende einer kleinen Partei behauptet, dass seine Partei bei der nächsten Bundestagswahl die 5 Prozenthürde überspringen wird."
+   solutions[1]<-TRUE
+   explanations[1]<-""
+
+questions[2]<- "Wahlkampfaussagen für eine Koalition mit Partei A finden die gleiche Zustimmung wie für eine Koalition mit Partei B."
+solutions[2]<-FALSE
+explanations[2]<- ""
+  questions[3]<- "Die Arbeitslosenzahlen sind genaus groß wie im Vormonat."
+solutions[3]<-FALSE
+explanations[3]<-""
+questions[4]<-"Keksdosen haben einen Nettoinhalt von mindestens 500g."
+solutions[4]<-TRUE
+explanations[4]<-""
+questions[5]<- "Nordrhein-Westfälische Arbeitnehmer verdienen im Schnitt mehr als Arbeitnehmer aus Brandenburg."
+solutions[5]<-TRUE
+explanations[5]<-""           
+## permute order of solutions/questions
+o <- sample(1:5)
+questions <- questions[o]
+solutions <- solutions[o]
+explanations <- explanations[o]  
+@
+
+\begin{question}
+Die unten aufgeführten Behauptungen sollen mit einem statistischen Test überprüft werden. Ist die Formulierung einer einseitigen Nullhypothese sinnvoll?
+\setkeys{Gin}{width=0.7\textwidth}
+
+\begin{answerlist}
+  \item \Sexpr{questions[1]}
+  \item \Sexpr{questions[2]}
+  \item \Sexpr{questions[3]}
+  \item \Sexpr{questions[4]}
+  \item \Sexpr{questions[5]}
+\end{answerlist}
+\end{question}
+
+%% SOLUTIONS
+\begin{solution}
+\begin{answerlist}
+  \item \Sexpr{mchoice2text(solutions[1])}: \Sexpr{explanations[1]}
+  \item \Sexpr{mchoice2text(solutions[2])}: \Sexpr{explanations[2]}
+  \item \Sexpr{mchoice2text(solutions[3])}: \Sexpr{explanations[3]}
+  \item \Sexpr{mchoice2text(solutions[4])}: \Sexpr{explanations[4]}
+  \item \Sexpr{mchoice2text(solutions[5])}: \Sexpr{explanations[5]}
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Multiple choice}
+

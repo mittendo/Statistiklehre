@@ -1,0 +1,50 @@
+\usepackage[utf8]{inputenc}
+
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION
+
+## QUESTION/ANSWER GENERATION
+questions <- character(5)
+solutions <- logical(5)
+explanations <- character(5)
+
+questions<-c(
+  'Uhrzeit',
+  'Blutalkoholgehalt',
+  
+  'Mannschaftspositionen im Fußballspiel',  
+  'Hobby von Studierenden',
+  'Güte von Restaurants (1, 2 oder 3 Sterne)')
+
+solutions<-c('Intervall','Ratioskala', 'Nominal', 'Nominal', 'Ordinal')
+solution<-paste(solutions, collapse=', ')
+
+explanations<-c('Es gibt keinen natürlichen Nullpunkt und keine natürliche Einheit, gleiche Zeiträume sind jedoch identische Intervalle.',
+                'Es gibt einen natürlichen Nullpunkt, aber keine natürliche Einheit. Gleiche Mengenunterschiede sind jedoch identische Intervalle.', 
+                'Eine Reihenfolge lässt sich nicht angeben. Genausowenig sind die Unterschiede zwischen zwei Positionen von identischer Größe.',
+                'Die Unterschiede lassen sich in eine Reihenfolge bringen. Die Unterschiede zwischen 1 und 2 Sternen ist jedoch nicht (notwendig) genauso groß wie der zwischen 2 und 3 Sternen.'
+               )
+@
+
+\begin{question}
+Geben Sie an, auf welcher Skala (Nominal, Ordinal, Intervall oder Ratio) die folgenden Merkmale gemessen werden können.
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(paste(questions))
+@
+
+\end{question}
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", solutions,"}", sep = ""),
+  explanations)
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{string}
+%% \exsolution{\Sexpr{solution}}
+%% \exname{Skalenniveaus}
+%% \extol{}

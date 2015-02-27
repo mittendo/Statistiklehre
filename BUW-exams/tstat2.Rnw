@@ -1,0 +1,73 @@
+\usepackage[utf8]{inputenc}
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION
+n <- sample(120:250, 1)
+mu <- sample(c(125, 200, 250, 500, 1000), 1)
+y <- rnorm(n, mean = mu * runif(1, min = 0.9, max = 1.1), 
+           sd = mu * runif(1, min = 0.02, max = 0.06))
+
+## QUESTION/ANSWER GENERATION
+Mean <- round(mean(y), digits = 1)
+Var <- round(var(y), digits = 2)
+tstat <- round((Mean - mu)/sqrt(Var/n), digits = 3)
+
+## TRANSFORM TO SINGLE CHOICE
+questions <- tstat
+while(length(unique(questions)) < 5) {
+  fuzz <- c(0, runif(4, 0.02, 2 * sqrt(Var)))
+  sign <- c(sign(tstat), sample(c(-1, 1), 4, replace = TRUE))
+  fact <- sample(c(-1, 1), 5, replace = TRUE)
+  questions <- round(sign * abs(tstat + fact * fuzz), digits = 3)
+}
+questions <- paste("$", format(questions, nsmall = 3), "$", sep = "")
+solutions <- c(TRUE, rep(FALSE, 4))
+
+o <- sample(1:5)
+questions <- questions[o]
+solutions <- solutions[o]
+@
+
+\begin{question}
+  Eine Maschine füllt Milch in $\Sexpr{mu}$ml Packungen. Es entsteht der Verdacht, 
+  dass die Maschine nicht korrekt funktioniert und dass die Milchmenge  vom 
+  voreingestellten Wert $\mu_0 = \Sexpr{mu}$ abweicht. Es wird eine Stichprobe von
+  $\Sexpr{n}$ Packungen aus den von der Maschine gefüllten Packungen gezogen. 
+  Der Mittelwert der Stichprobe  $\bar{y}$ beträgt 
+  $\Sexpr{Mean}$ und die Stichprobenvarianz $s^2_{n-1}$ ist gleich 
+  $\Sexpr{Var}$.
+
+  Testen Sie die Hypothese, dass die abgefüllte Milchmenge dem voreingestellten Wert entspricht.
+  Wie lautet der Wert der $t$~test Statistik?
+
+\begin{answerlist}
+  \item \Sexpr{questions[1]}
+  \item \Sexpr{questions[2]}
+  \item \Sexpr{questions[3]}
+  \item \Sexpr{questions[4]}
+  \item \Sexpr{questions[5]}
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+  Die  $t$~test berechnet sich wie folgt:
+  \begin{eqnarray*}
+    t & = & \frac{\bar y - \mu_0}{\sqrt{\frac{s^2_{n-1}}{n}}}
+    = \frac{\Sexpr{Mean} - \Sexpr{mu}}{\sqrt{\frac{\Sexpr{Var}}{\Sexpr{n}}}}
+    = \Sexpr{tstat}.
+  \end{eqnarray*}
+  Daher ist der Wert der $t$~Test Statistik
+  $\Sexpr{format(tstat, nsmall = 3)}$.
+
+\begin{answerlist}
+  \item \Sexpr{mchoice2text(solutions[1])}
+  \item \Sexpr{mchoice2text(solutions[2])}
+  \item \Sexpr{mchoice2text(solutions[3])}
+  \item \Sexpr{mchoice2text(solutions[4])}
+  \item \Sexpr{mchoice2text(solutions[5])}
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{t statistic}

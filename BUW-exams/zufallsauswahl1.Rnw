@@ -1,0 +1,55 @@
+\usepackage[utf8]{inputenc}
+
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION
+
+## QUESTION/ANSWER GENERATION
+questions <- character(5)
+solutions <- logical(5)
+explanations <- character(5)
+
+questions<-c(
+  'Die 100 ausgewählten Leser bilden eine repräsentative Stichprobe aller Menschen, die an
+  \\textit{Moderner Wohnen} interessiert sind.',
+  'Die oben genannten Bedingungen sind erfüllt, wenn man die ersten
+  und die letzten 50 Einsender beschenkt.',
+  
+  'Die 100 ausgewählten Einsender bilden eine repräsentative Stichprobe unter allen Einsendern.',  
+  'Man könnte die 100 Einsender, die beschenkt werden sollen auswählen, indem man alle Antwortkarten in eine große Lostrommel ibt und nacheinander 100 Karten zufällig zieht, wobei vor jeder Ziehung gründlich gemischt wird.',
+  'Bei der einfachen Zufallsauswahl hat jedes Mitglied der Grundgesamtheit die gleiche Chance, in die Stichprobe zu gelangen.')
+
+solutions<-c(F, F, T, T, T)
+
+explanations<-c('Nicht alle, die sich für die Zeitschrift interessieren, beteiligen sich an Preisrätseln',
+                'Es ist nicht zufällig, in welcher Reihenfolge die Antwortkarten eintreffen. Die Reihenfolge könnte z.B. von den Postlaufzeiten abhängen.', 
+                'Eine Zufallsauswahl ist repräsentativ für die EinsenderInnen (nicht für die LeserInnen!)',
+                'Hierbei handelt es sich um ein klassisches Losverfahren, mit dem echte Zufallsauswahlen erzeugt werden.',
+                'Dies ist per definitionem die Chance in der einfachen Zufallsauwahl.')
+@
+
+\begin{question}
+Einfache Zufallsauswahl: Wahr oder Falsch?
+
+Unter allen Einsendern einer Leserumfrage der Zeitschrift Moderner Wohnen sollen 100 Geschenke verlost werden, so dass jeder Teilnehmer an der Leserumfrage die gleiche Chance hat, beschenkt zu werden.
+
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(paste(questions))
+@
+
+\end{question}
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "True", "False"), "}", sep = ""),
+  explanations)
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Multiple Choice}
+%% \extol{}

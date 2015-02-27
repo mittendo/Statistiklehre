@@ -1,0 +1,92 @@
+\usepackage[utf8]{inputenc}
+
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION
+n <- 40 + sample(1:12, 2) * 3
+Waiting <- rnorm(sum(n), sd = sample(30:40, 1)/10) + rep(sample(30:80, 2)/10, n)
+Waiting[Waiting < 0] <- 0
+dat <- data.frame(Waiting = Waiting,
+                  Sprechstunde = factor(rep(1:2, c(n[1], n[2])), 
+                    levels = 1:2, labels = c("Prof. A", "Prof. B")))
+
+## QUESTION/ANSWER GENERATION
+questions <- character(5)
+solutions <- logical(5)
+explanations <- character(5)
+
+tt <- t.test(Waiting ~ Sprechstunde, data = dat, var.equal = TRUE,
+             alternative = sample(c("less", "greater", "two.sided"), 1))
+
+questions[1] <- "Der Absolutwert der Teststatistik ist größer als 1,96."
+solutions[1] <- abs(tt$statistic) > 1.96
+explanations[1] <- paste("Der Absolutwert der Teststatistik ist gleich ", 
+  round(abs(tt$statistic), digits = 3), ".", sep = "")
+
+questions[2] <- "Es wurde ein einseitiger Test durchgeführt."
+solutions[2] <- tt$alternative != "two.sided"
+explanations[2] <- paste("Der Test zielt darauf ab zu zeigen, dass die Differenz der Mittelwerte  ",
+  switch(tt$alternative, "two.sided" = "ungleich ", "less" = "kleiner als ", 
+  "greater" = "größer als "), "$0$ ist.")
+
+questions[3] <- "Der $p$~Wert ist größer als $0,05$."
+solutions[3] <- tt$p.value > 0.05
+explanations[3] <- paste("Der $p$~Wert ist gleich $", format.pval(tt$p.value, digits = 3),
+  "$.", sep = "")
+
+questions[4] <- paste("Der Test zeigt, dass man bei Prof. A länger warten muss  ",
+  "als bei Prof. B..")
+solutions[4] <- tt$p.value < 0.05 & tt$alternative != "less" & diff(tt$estimate) < 0
+explanations[4] <- if (solutions[4]) paste("Das Testergebnis ist Signifikant ($p < 0,05$)",
+  " und daher wird die Alternativhypothese angezeigt, dass die Differenz der Mittelwerte ",
+  ifelse(tt$alternative == "two.sided", "ungleich  ", "größer als"), "0 ist.") else 
+  paste(ifelse(tt$alternative != "less", "", paste("Der Test zielt darauf zu zeigen, ",
+  " dass die Alternativhypothese zutrifft, das die Wartezeit bei Prof. A. kürzer ist als bei Prof. B.")),
+  ifelse(tt$p.value < 0.05, "", "Das Testergebnis ist nicht signifikant ($p \\\\ge 0,05$)."))
+
+questions[5] <- paste("Das Testergebnis zeigt, dass die Warteizeit bei Prof. A kürzer ist, als die bei Prof. B.")
+solutions[5] <- tt$p.value < 0.05 & tt$alternative != "greater" & diff(tt$estimate) > 0
+explanations[5] <- if (solutions[5]) paste("Das Testergebnis ist signifikant ($p < 0,05$)",
+  " und daher wird die Alternativehypothese angezeigt, dass die Differenz der Mittelwerte ",
+  ifelse(tt$alternative == "two.sided", "ungleich ", "kleiner als "),
+  "$0$ ist.") else paste(ifelse(tt$alternative != "greater", "", 
+  paste("Der Test zielt darauf ab zu zeigen, dass die Wartezeit bei Prof. A länger ist als bei Prof. B.")),
+  ifelse(tt$p.value < 0.05, "", "Das Testergebnis ist nicht signifikant ($p \\\\ge 0,05$)."))
+@
+
+\begin{question}
+
+  Die Wartezeit (in Minuten) in den Sprechzeiten von zwei verschiedenen Dozenten 
+  wird von Studierenden verglichen. Sie führen mit einem geeigneten Programm den 
+  folgenden t-Test durch:
+
+<<echo=FALSE, results=verbatim>>=
+print(tt)
+@
+
+Welche der folgenden Aussagen sind korrekt?  (Signifikanzniveau
+$5\%$)
+\begin{answerlist}
+  \item \Sexpr{questions[1]}
+  \item \Sexpr{questions[2]}
+  \item \Sexpr{questions[3]}
+  \item \Sexpr{questions[4]}
+  \item \Sexpr{questions[5]}
+\end{answerlist}
+\end{question}
+
+%% SOLUTIONS
+\begin{solution}
+\begin{answerlist}
+  \item \Sexpr{mchoice2text(solutions[1])}: \Sexpr{explanations[1]}
+  \item \Sexpr{mchoice2text(solutions[2])}: \Sexpr{explanations[2]}
+  \item \Sexpr{mchoice2text(solutions[3])}: \Sexpr{explanations[3]}
+  \item \Sexpr{mchoice2text(solutions[4])}: \Sexpr{explanations[4]}
+  \item \Sexpr{mchoice2text(solutions[5])}: \Sexpr{explanations[5]}
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Multiple choice}
+

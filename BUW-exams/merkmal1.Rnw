@@ -1,0 +1,50 @@
+\usepackage[utf8]{inputenc}
+
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION
+
+## QUESTION/ANSWER GENERATION
+questions <- character(5)
+solutions <- logical(5)
+explanations <- character(5)
+
+questions<-c(
+  'Füllmenge von Bierflaschen.',
+  'Anzahl von Orangen in einer Kiste.',
+  
+  'Einkommen von Studentischen Mitarbeiterinnen und Mitarbeitern.',  
+  'Temperatur in einem Gefrierschrank.',
+  'Frequenz von Rundfunksendern (in kHz).')
+
+solutions<-c(T,F,F,T,T)
+
+explanations<-c('Das Merkmal kann beliebige Nachkommawerte annehmen, ist also stetig.',
+                'Halbe Orangen lassen sich nicht in Kisten verkaufen: Merkmal ist nicht stetig, d.h. es ist diskret.', 
+                'Einkommen lassen sich auf den Cent genau angeben, aber nicht genauer. Merkmal ist also nicht stetig, d.h. es ist diskret.',
+                'Temperaturen lassen sich auf beliebige Kommastellen genau ermitteln. Merkmal ist stetig.',
+                'Frequenzen lassen sich auf beliebige Kommastellen genau ermitteln. Merkmal ist stetig.')
+@
+
+\begin{question}
+Diskret oder Stetig: Welche der folgenden Merkmale sind stetig.
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(paste(questions))
+@
+
+\end{question}
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Wahr", "Falsch"), "}", sep = ""),
+  explanations)
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Multiple Choice}
+%% \extol{}

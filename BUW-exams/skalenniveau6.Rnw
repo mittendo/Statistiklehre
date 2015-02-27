@@ -1,0 +1,46 @@
+\usepackage[utf8]{inputenc}
+
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION
+
+## QUESTION/ANSWER GENERATION
+questions <- character(8)
+solutions <- logical(8)
+explanations <- character(8)
+
+questions<-c(
+  
+  'Wie oft lesen Sie im Alltag Zeitung? – Antwort: sehr oft, oft, manchmal, eher selten, nie', 
+  'Mit wem sprechen Sie über das, was Sie in Zeitungen lesen, wenn auch nur gelegentlich? – Antwort: mit dem Ehepartner/Lebenspartner, den Kindern, den Eltern, ...', 
+  'Haben Sie in den letzten 12 Monaten ein Zeitungsabonnement gekauft oder geschenkt bekommen? – Antwort: gekauft, geschenkt bekommen, weder gekauft noch geschenkt bekommen', 
+  '(Nur an die, die in den letzten 12 Monaten ein Abonnement hatten.) In wie vielen Monaten haben Sie in den letzten 12 Monaten ein Abonnement besessen? – Antwort: 1, 2, 3,...',
+  '(Nur an die, die ein Abonnement besitzen haben.) Wie alt waren Sie, als Sie das Abonnement begonnen haben? – Antwort: Alter')
+
+solutions<-c(T,T,T,F,F)
+
+explanations<-c()
+@
+
+\begin{question}
+Das Institut für Politikwissenschaft eine Umfrage über das Leseverhalten von Studierenden durchführen. Geben Sie bei den folgenden dort u.a. gestellten Fragen an, ob es sich um qualitativ skalierte Merkmale handelt.
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(paste(questions))
+@
+
+\end{question}
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "True", "False"), "}", sep = ""),
+  explanations)
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Multiple Choice}
+%% \extol{}

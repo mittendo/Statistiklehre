@@ -1,0 +1,62 @@
+\usepackage[utf8]{inputenc}
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION
+
+## QUESTION/ANSWER GENERATION
+questions <- character(5)
+solutions <- logical(5)
+explanations <- character(5)
+
+
+questions[1]<-"Mit einem größeren Stichprobenumfang würde die Wahrscheinloichkeit für das Verwerfen kleiner werden."
+   solutions[1]<-FALSE
+   explanations[1]<-"Die Wahrscheinlichkeit für das Verwerfen ist vom Stichprobenumfang unabhängig."
+
+questions[2]<- "Ein größerer Stichprobenumfang verbessert die Chance, vorhandene Abweichungen von der Nullhypothese bei einem Signifikanztest zu entdecken."
+solutions[2]<-TRUE
+explanations[2]<- ""
+  questions[3]<- "Wenn die Nullhypothese zutrifft, ist bei größerem Stichprobenumfang die Chance die Nullhypothese zu verwerfen größer."
+solutions[3]<-FALSE
+explanations[3]<-""
+questions[4]<-"Die Aussage der Nullhypothese ist statistisch widerlegt."
+solutions[4]<-TRUE
+explanations[4]<-""
+questions[5]<- "Ein größereres Signifikanzniveau würde die Wahrscheinlichkeit für das Verwerfen der Nullhypothese kleiner machen."
+solutions[5]<-FALSE
+explanations[5]<-""           
+## permute order of solutions/questions
+o <- sample(1:5)
+questions <- questions[o]
+solutions <- solutions[o]
+explanations <- explanations[o]  
+@
+
+\begin{question}
+  Man hat einen Signifikanztest durchgeführt und musste die Nullhypothese bei einem Signifikanzniveau von $0,05$ verwerfen. Welche der folgenden Aussagen sind dann richtig?
+\setkeys{Gin}{width=0.7\textwidth}
+
+\begin{answerlist}
+  \item \Sexpr{questions[1]}
+  \item \Sexpr{questions[2]}
+  \item \Sexpr{questions[3]}
+  \item \Sexpr{questions[4]}
+  \item \Sexpr{questions[5]}
+\end{answerlist}
+\end{question}
+
+%% SOLUTIONS
+\begin{solution}
+\begin{answerlist}
+  \item \Sexpr{mchoice2text(solutions[1])}: \Sexpr{explanations[1]}
+  \item \Sexpr{mchoice2text(solutions[2])}: \Sexpr{explanations[2]}
+  \item \Sexpr{mchoice2text(solutions[3])}: \Sexpr{explanations[3]}
+  \item \Sexpr{mchoice2text(solutions[4])}: \Sexpr{explanations[4]}
+  \item \Sexpr{mchoice2text(solutions[5])}: \Sexpr{explanations[5]}
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Multiple choice}
+

@@ -1,0 +1,72 @@
+\usepackage[utf8]{inputenc}
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION
+
+## QUESTION/ANSWER GENERATION
+questions <- character(8)
+solutions <- logical(8)
+explanations <- character(8)
+
+questions[1]<- "Ein diskretes Merkmal kann nur endlich viele Werte annehmen."
+solutions[1]<-FALSE
+
+questions[2] <- "Jedes Merkmal, das mehr als endlich viele Werte annehmen kann, ist
+stetig."
+solutions[2]<-FALSE
+
+questions[3] <- "Nominale und ordinale Merkmale sind diskret."
+solutions[3]<-TRUE
+
+questions[4]<-  "Quantitative Merkmale können diskret oder auch stetig sein."
+solutions[4]<-TRUE
+
+questions[5]<-  "Das Merkmal Brenndauer einer Glühbirne ist stetig, während das Merkmal Anzahl der Tippfehler auf einer Folie diskret ist."
+solutions[5]<-TRUE
+
+questions[6]<- "Ordinalskalierte Merkmale sind stets quantitativ." 
+solutions[6]<-FALSE
+
+questions[7]<-  "Ordinalskalierte Merkmale besitzen eine Ordnung." 
+solutions[7]<-TRUE
+
+questions[8]<- "Ein Merkmal mit endlichen vielen Ausprägungen ist diskret." 
+solutions[8]<-TRUE
+
+
+
+## permute order of solutions/questions
+o <- sample(1:8, 5)
+questions <- questions[o]
+solutions <- solutions[o]
+explanations <- explanations[o]  
+@
+
+\begin{question}
+  Merkmale: Welche der folgenden Aussagen sind richtig?
+\setkeys{Gin}{width=0.7\textwidth}
+
+\begin{answerlist}
+  \item \Sexpr{questions[1]}
+  \item \Sexpr{questions[2]}
+  \item \Sexpr{questions[3]}
+  \item \Sexpr{questions[4]}
+  \item \Sexpr{questions[5]}
+\end{answerlist}
+\end{question}
+
+%% SOLUTIONS
+\begin{solution}
+\begin{answerlist}
+  \item \Sexpr{mchoice2text(solutions[1])}: \Sexpr{explanations[1]}
+  \item \Sexpr{mchoice2text(solutions[2])}: \Sexpr{explanations[2]}
+  \item \Sexpr{mchoice2text(solutions[3])}: \Sexpr{explanations[3]}
+  \item \Sexpr{mchoice2text(solutions[4])}: \Sexpr{explanations[4]}
+  \item \Sexpr{mchoice2text(solutions[5])}: \Sexpr{explanations[5]}
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Multiple choice}
+

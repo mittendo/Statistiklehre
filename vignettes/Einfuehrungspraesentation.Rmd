@@ -1,0 +1,77 @@
+---
+title: "Methoden II: Quantitative politikwissenschaftliche Forschung" 
+author: "Volker Mittendorf"
+date: "17. Februar 2015"
+output:
+  ioslides_presentation:
+    logo: rmarkdown/templates/politik-headline2.png
+    css: rmarkdown/templates/Rpres.css
+    widescreen: yes
+---
+
+<!--
+  %\VignetteIndexEntry{Einührungspräsentation}
+  %\VignetteEngine{knitr::knitr}
+  \usepackage[utf8]{inputenc}
+-->
+---
+
+
+
+Gliederung
+==============
+
+## Inhaltsverzeichnis
+- Formales zum Seminar
+- Qualitativ vs. Quantitativ
+- Seminarinhalte
+- Eine Beispielstudie
+
+Formales zum Seminar
+========================================================
+
+## Seminaranforderungen
+- Bestehen der Tests
+- Durchführen von Aufgaben
+
+## Klausur
+- Modulabschluss: Klausur (90 Min)
+
+Qualitative vs. quantitative politikwissenschaftliche Forschung
+========================================================
+
+## Qualitativ: Beobachten, Befragen und Dokumentenanalyse mit der Fragestellung, wie ist ein Problem beschaffen
+- Wie wird ein Problem wahrgenommen?
+- wie wird ein Problem in Worte gefasst?
+...
+
+## Quantitativ: Messen und Zählen mit unterschiedlichen Fragestellungen
+- Wie bedeutsam ist ein Problem?
+
+...
+
+
+
+Seminarinhalte
+=======================================================
+
+## Studiendesign
+## Zusammenhang zwischen fachwissenschaftlicher Darstellung (theoretischer Rahmung) und messbaren Zusammenhängen (Statistiken)
+...
+
+Eine Beispielstudie: Sind weibliche Hurricanes tödlicher als männliche?
+========================================================
+
+
+Die "Himmicanes Studie" - warum sie wissenschaftlich vorbildlich ist
+========================================================
+* Legt Daten offen
+* Ist reproduzierbar und nachvollziehbar
+* Macht eine wissenschaftliche Analyse wie aus dem Lehrbuch
+
+
+Die "Himmicanes Studie" - warum sie methodisch schlecht ist
+========================================================
+* Macht eine wissenschaftliche Analysie wie aus dem Lehrbuch für Experimente
+* Berücksichtigt nicht Studiendesign
+* Endet da, wo die Skepsis anfangen muss

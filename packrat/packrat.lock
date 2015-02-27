@@ -53,6 +53,11 @@ Version: 0.5.5
 Hash: 20881970e590ee68de97a468694db7b0
 Requires: stringr
 
+Package: exams
+Source: CRAN
+Version: 2.0-2
+Hash: 4cd6821d3105451491cfc0666fcddda3
+
 Package: formatR
 Source: CRAN
 Version: 1.0
@@ -113,10 +118,14 @@ GithubRef: master
 GithubSha1: 6a0669586f295f4b6336dd973e8b5f970732fc2e
 
 Package: rmarkdown
-Source: CRAN
-Version: 0.5.1
-Hash: 2d87f70c12c5558c50c4b3587fc6f499
+Source: github
+Version: 0.5.3.1
+Hash: 4c8b860f276bcceb9fe10722544ee189d1ae7548
 Requires: caTools, htmltools, knitr, yaml
+GithubRepo: rmarkdown
+GithubUsername: rstudio
+GithubRef: master
+GithubSha1: 4c8b860f276bcceb9fe10722544ee189d1ae7548
 
 Package: roxygen2
 Source: CRAN
@@ -138,6 +147,11 @@ Package: whisker
 Source: CRAN
 Version: 0.3-2
 Hash: 186ab2937fec1694c8a63009a2389c4e
+
+Package: xtable
+Source: CRAN
+Version: 1.7-4
+Hash: 7b30b5ca6c7ae80c4f916502e3ad0237
 
 Package: yaml
 Source: CRAN

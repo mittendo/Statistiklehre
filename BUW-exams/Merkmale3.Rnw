@@ -1,0 +1,65 @@
+\usepackage[utf8]{inputenc}
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION
+
+## QUESTION/ANSWER GENERATION
+questions <- character(5)
+solutions <- logical(5)
+explanations <- character(5)
+
+questions[1]<- "Füllmenge von Limonadeflaschen."
+solutions[1]<-FALSE
+
+questions[2] <- "Anzahl von Limetten in einer Kiste."
+solutions[2]<-TRUE
+
+questions[3] <- "Einkommen von Angestellten in der Tarifklasse TVÖD 13."
+solutions[3]<-TRUE
+
+questions[4]<-  "Temperatur in einem brasilianischen Fußballstadion."
+solutions[4]<-FALSE
+
+questions[5]<-  "Anzahl der Tore in einem WM-Halbfinalspiel."
+solutions[5]<-TRUE
+
+
+
+
+## permute order of solutions/questions
+o <- sample(1:5, 5)
+questions <- questions[o]
+solutions <- solutions[o]
+explanations <- explanations[o]  
+@
+
+\begin{question}
+  Merkmale: Geben Sie für die folgenden Merkmale an, ob sie diskret sind.
+\setkeys{Gin}{width=0.7\textwidth}
+
+\begin{answerlist}
+  \item \Sexpr{questions[1]}
+  \item \Sexpr{questions[2]}
+  \item \Sexpr{questions[3]}
+  \item \Sexpr{questions[4]}
+  \item \Sexpr{questions[5]}
+  %\item \Sexpr{questions[6]}
+\end{answerlist}
+\end{question}
+
+%% SOLUTIONS
+\begin{solution}
+\begin{answerlist}
+  \item \Sexpr{mchoice2text(solutions[1])}: \Sexpr{explanations[1]}
+  \item \Sexpr{mchoice2text(solutions[2])}: \Sexpr{explanations[2]}
+  \item \Sexpr{mchoice2text(solutions[3])}: \Sexpr{explanations[3]}
+  \item \Sexpr{mchoice2text(solutions[4])}: \Sexpr{explanations[4]}
+  \item \Sexpr{mchoice2text(solutions[5])}: \Sexpr{explanations[5]}
+  %\item \Sexpr{mchoice2text(solutions[5])}: \Sexpr{explanations[6]}
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Multiple choice}
+

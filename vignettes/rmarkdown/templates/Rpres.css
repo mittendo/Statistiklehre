@@ -1,0 +1,47 @@
+body {
+  #background: white;
+  background-color: lightgrey; 
+  background-image  : url(http://www.politikwissenschaft.uni-wuppertal.de/fileadmin/politikwissenschaft/1._Die_Politikwissenschaft/Organisation_und_Struktur/Mittendorf/Rpres_background.png); 
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-size: 100% 100%;}
+ 
+
+.reveal {
+  font-family: "Lato", sans-serif;
+  font-size: 36px;
+  font-weight: 200;
+  letter-spacing: -0.02em;
+  color: black; }
+
+::selection {
+  color: white;
+  background: rgba(0, 0, 0, 0.99);
+  text-shadow: none; }
+
+.section .reveal {
+  font-family: "Lato", sans-serif;
+  font-size: 36px;
+  font-weight: 200;
+  letter-spacing: -0.02em;
+  color: black; }
+
+.section .reveal .state-background {
+  background-color: lightgrey; 
+  background-image  : url(http://www.politikwissenschaft.uni-wuppertal.de/fileadmin/politikwissenschaft/1._Die_Politikwissenschaft/Organisation_und_Struktur/Mittendorf/Rpres_background.png); 
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-size: 100% 100%;
+}
+
+
+.sub-section .reveal .state-background {
+  background-color: lightgrey; 
+  background-image  : url(http://www.politikwissenschaft.uni-wuppertal.de/fileadmin/politikwissenschaft/1._Die_Politikwissenschaft/Organisation_und_Struktur/Mittendorf/Rpres_background.png); 
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-size: 100% 100%;
+}
+
+
+

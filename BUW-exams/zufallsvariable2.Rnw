@@ -1,0 +1,58 @@
+\usepackage[utf8]{inputenc}
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION
+
+## QUESTION/ANSWER GENERATION
+questions <- character(5)
+solutions <- logical(5)
+explanations <- character(5)
+
+
+questions[1]<-"Die Anzahl der Nutzer der Universitätsbibliothek pro Tag ist eine Zufallsvariable."
+solutions[1]<-TRUE
+questions[2]<- "Beträgt Anzahl der Nutzer einer Bibliothek am Tag 1342, so sagt man,
+dass 1342 die Realisation einer Zufallsvariablen ist."
+solutions[2]<-TRUE
+questions[3] <- "Bevor der Tag beendet ist, hat die Zufallsvariable Nutzer einer Bibliothek pro Tag unendlich viele mögliche Werte."
+solutions[3]<-TRUE
+questions[4] <- "Falls X eine Zufallsvariable ist, so hat X keinen einzelnen Wert, sondern dern X kann mehrere mögliche Werte annehmen."
+solutions[4]<-TRUE
+questions[5]<- "Realisation einer Zufallsvariablen bedeutet dasselbe wie Zufallsvariable."
+solutions[5]<-FALSE
+
+## permute order of solutions/questions
+o <- sample(1:5)
+questions <- questions[o]
+solutions <- solutions[o]
+explanations <- explanations[o]  
+@
+
+\begin{question}
+  Zufallsvariablen: Welche der folgenden Aussagen sind richtig?
+\setkeys{Gin}{width=0.7\textwidth}
+
+\begin{answerlist}
+  \item \Sexpr{questions[1]}
+  \item \Sexpr{questions[2]}
+  \item \Sexpr{questions[3]}
+  \item \Sexpr{questions[4]}
+  \item \Sexpr{questions[5]}
+\end{answerlist}
+\end{question}
+
+%% SOLUTIONS
+\begin{solution}
+\begin{answerlist}
+  \item \Sexpr{mchoice2text(solutions[1])}: \Sexpr{explanations[1]}
+  \item \Sexpr{mchoice2text(solutions[2])}: \Sexpr{explanations[2]}
+  \item \Sexpr{mchoice2text(solutions[3])}: \Sexpr{explanations[3]}
+  \item \Sexpr{mchoice2text(solutions[4])}: \Sexpr{explanations[4]}
+  \item \Sexpr{mchoice2text(solutions[5])}: \Sexpr{explanations[5]}
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Multiple choice}
+

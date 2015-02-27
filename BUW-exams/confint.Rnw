@@ -1,0 +1,42 @@
+\usepackage[utf8]{inputenc}
+
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION
+n <- sample(50:150, 1)
+y <- rnorm(n, runif(1, 100, 200), runif(1, 10, 15))
+
+## QUESTION/ANSWER GENERATION
+Mean <- round(mean(y), digits = 1)
+Var <- round(var(y), digits = 1)
+sd <- sqrt(Var/n)
+LB <- round(Mean - 1.96*sd, 3)
+UB <- round(Mean + 1.96*sd, 3)
+@
+
+\begin{question}
+  Die jährlichen Bildungsausgaben von pro Kopf in verschiedenen Landkreisen und 
+  kreisfreien Städten werden untersucht. Eine Erhebung unter $\Sexpr{n}$ Kreisen 
+  und Gemeinden wird durchgeführt. Es zeigt sich, dass die Kreise im Durchschnitt 
+  $\Sexpr{Mean}$ EUR pro Kopf ausgeben. Die Stichprobenvarianz
+  $s^2_{n-1}$ ist gleich $\Sexpr{Var}$.
+  
+  Bestimmen Sie ein $95\%$ Konfidenzintervall für die jährlichen Pro-Kopf Ausgaben (in EUR) eines Kreises bzw. einer kreisfreien Stadt.
+\end{question}
+
+%% SOLUTION
+\begin{solution}
+  Das $95\%$ Konfidenzintervall für die durchschnittlichen Pro-Kopf-Ausgaben  $\mu$ wird bestimmt durch:
+\begin{eqnarray*}
+&   & \left[\bar{y} \, - \, 1.96\sqrt{\frac{s_{n-1}^2}{n}}, \; 
+  \bar{y} \, + \, 1.96\sqrt{\frac{s_{n-1}^2}{n}}\right] \\
+& = & \left[ \Sexpr{Mean} \, - \, 1.96\sqrt{\frac{\Sexpr{Var}}{\Sexpr{n}}}, \;
+             \Sexpr{Mean} \, + \, 1.96\sqrt{\frac{\Sexpr{Var}}{\Sexpr{n}}}\right] \\
+& = & \left[\Sexpr{LB}, \, \Sexpr{UB}\right].
+\end{eqnarray*}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{LB}}{\Sexpr{UB}}
+%% \exname{Konfidenzintervall}
+%% \extol{0.01}
