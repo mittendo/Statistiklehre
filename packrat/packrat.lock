@@ -19,6 +19,11 @@ Source: CRAN
 Version: 0.11.4
 Hash: 1f684f6afd28079e4e609b49f353e49f
 
+Package: base64enc
+Source: CRAN
+Version: 0.1-2
+Hash: 290e385e048cebab0e8d8d301b84ac75
+
 Package: bitops
 Source: CRAN
 Version: 1.0-6
@@ -142,6 +147,11 @@ Package: stringr
 Source: CRAN
 Version: 0.6.2
 Hash: cdde0cfa0f52cffeaca23a11a3899779
+
+Package: tth
+Source: CRAN
+Version: 4.3-2
+Hash: 453dcb388b55381b7c4757576c24a294
 
 Package: whisker
 Source: CRAN
