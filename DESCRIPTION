@@ -1,10 +1,13 @@
 Package: Statistiklehre
-Title: What the package does (short line)
+Title: Course stuff for "quantitative politikwissenchaftliche Methoden" (BUW)
 Version: 0.1
 Authors@R: "Volker Mittendorf <mittendorf@uni-wuppertal.de> [aut, cre]"
-Description: What the package does (paragraph)
+Description: Useful stuff, functions, documents and so on for the course 
+"quantitative politikwissenschaftliche Methoden" for political science at 
+the University Wuppertal (BUW)
 Depends: R (>= 3.1.0)
-License: What license is it under?
+License: MIT
 LazyData: true
-Suggests: knitr, exams
+Suggests: knitr
 VignetteBuilder: knitr
+Imports: exams
