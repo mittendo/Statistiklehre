@@ -54,7 +54,7 @@ Modulteil 1: POL 1.2a "Methoden I: Qualitative politikwissenschaftliche Methoden
 
 Modulteil 2: POL 1.2b "Methoden II: Quantitative politikwissenschaftliche Methoden"
 
-1. Sitzung: Qualitativ vs. Quantitativ, Himmicanes (vs. Herricanes/Hurricanes)
+1. Sitzung: Qualitativ vs. Quantitativ, Himmicanes (vs. Hericanes/Hurricanes)
     + angepasste Einführungspräsentation
     + Vorstellung Hurricanes-Studie
 1. Sitzung: Verteilungen und Histogramme

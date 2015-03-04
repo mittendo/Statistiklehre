@@ -148,6 +148,18 @@ Source: CRAN
 Version: 0.6.2
 Hash: cdde0cfa0f52cffeaca23a11a3899779
 
+Package: swirl
+Source: CRAN
+Version: 2.2.21
+Hash: 83dbe29717fa091b006f29e56bb5d24b
+Requires: RCurl, digest, httr, stringr, testthat, yaml
+
+Package: testthat
+Source: CRAN
+Version: 0.9.1
+Hash: 8b05e97c7401ae4f8b5dfbaa44cfcf20
+Requires: digest
+
 Package: tth
 Source: CRAN
 Version: 4.3-2
