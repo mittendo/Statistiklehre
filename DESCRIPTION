@@ -1,12 +1,10 @@
 Package: Statistiklehre
-Title: Course stuff for "quantitative politikwissenchaftliche Methoden" (BUW)
+Title: Course stuff for quantitative politikwissenchaftliche Methoden (BUW)
 Version: 0.1
 Authors@R: "Volker Mittendorf <mittendorf@uni-wuppertal.de> [aut, cre]"
-Description: Useful stuff, functions, documents and so on for the course 
-"quantitative politikwissenschaftliche Methoden" for political science at 
-the University Wuppertal (BUW)
+Description: Useful stuff, functions, documents and so on for the course "quantitative politikwissenschaftliche Methoden" for political science at the University Wuppertal (BUW)
 Depends: R (>= 3.1.0)
-License: MIT
+License: GPL-3
 LazyData: true
 Suggests: knitr
 VignetteBuilder: knitr
