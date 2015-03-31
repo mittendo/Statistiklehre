@@ -14,3 +14,80 @@ output:
   %\VignetteEngine{knitr::knitr}
   \usepackage[utf8]{inputenc}
 -->
+
+
+# Thema: Verteilungen und Histogramme 
+
+## Quantitative Aussagen in der Politikwissenschaft
+
+- Wo begegnen uns quantitative Daten? Fallen Ihnen Beispiele ein?
+- Wann brauchen wir als Sozialwissenschaftler einen "quantitativen" Umgang mit Daten?
+
+
+<div class="notes">
+-> Grundgesamtheit/Stichprobe
+-> (gleichartige) Merkmale
+-> Zählbar oder Messbar
+</div>
+
+## Einige aktuelle Beispiele: What's in the news?
+
+
+<div class="notes">
+-> Wie kommt es zu den Daten
+    -> Rückschlüsse auf die Studiendesigns
+    -> Feld, Experiment, "Feldexperiment"
+    -> Befragen, Beobachten 
+    -> Messen, Zählen
+</div>
+    
+-> Wie werden die Ergebnisse dargestellt/kommuniziert
+    -> Art der zusammenfassenden Darstellung
+        -> Aussagekräftige Zahlenwerte
+        -> Aussagekräftig Bilder
+    -> Was ist das "typische" für die Darstellung von Ergebnissen
+        -> z.B. Mittelwerte, Anteile, Streuungen
+        -> Tendenzaussagen: Gewachsen/Gesunken/Gleichgeblieben
+        -> Je desto Aussagen
+        -> im wiss. Kontext: Zuverlässigkeitstests
+
+
+- wie gehe ich mit quantitativen Daten um?
+-> Kurze zusammenfassende Darstellung einer Vielzahl (gleichartiger) Daten
+-> Es bilden sich Muster, sog. Verteilungen
+-> Hier: Beispiele
+    -> Gleichverteilung
+    -> Binomialverteilung/Normalverteilung
+    -> Schiefe Verteilungen
+    -> Flache/Spitze Verteilungen
+    -> Versuch, diese Daten aussagekräftige Kennzahlen zu geben -> Maße der zentralen Tendenz, Abweichungsmaße
+    
+Danach: Fragebogen ausfüllen lassen
+
+Fragen: 
+   Handedness
+   Größe
+   Schuhgröße
+   Handspannweite
+   Geschlecht
+   Haar- und Augenfarbe
+   Semesterzahl
+   Alter
+   Wie viel soft-drinks gestern (in l)
+   Fernsehzeit
+   Online-Zeit
+   Lernen
+   Nebenjob
+   Ordinal?
+
+## Soft-Drinks 
+
+- Stellen Sie eine eigene Vermutung an: Zeichnen Sie ein mögliches Histogramm (ihre "Hypothese") über den Soft-Drink-Konsum pro Kopf.
+- Wie groß ist der Anteil derjenigen, die eine Getränkeeinheit zu sich nehmen (0,25 l), wie groß ist der Anteil derjenigen, die 0,5 l, 0,75 l, 1,0 l, 1,25 l, 1,5 l, 2,0 l oder mehr zu sich nehmen?
+- Erarbeiten Sie paarweise ein Histogramm!
+
+Schließlich: Soft-Drink-Consumption als spezielle Verteilung
+    -> Amerikanische Verteilung als Beispiel, Vergleich mit Verteilung der Studierenden in der kommenden Woche
+    -> Frage: wie stellt man das dar? -> Histogramm
+    -> Frage: Wie geht man mit Nichtkonsumenten um? -> "Spike"
+

@@ -14,3 +14,20 @@ output:
   %\VignetteEngine{knitr::knitr}
   \usepackage[utf8]{inputenc}
 -->
+# Der "Durchschnittsstudierende" 
+
+-> Aufgreifen: Soda-drink-consumption aus der Vorwoche
+-> Ähnelt das Bild dem, was die amerikanische Umfrage zeigte?
+
+-> Quetelet als Aufhänger: Demokratisierung! Anthropometrische Messungen, Quetelet-Index (BMI)
+
+-> der "typische" Bürger / der "Durchschnittsbürger" / Otto Normalverbraucher (Durchschnittsverdiener / der "kleine Mann" / "Mann auf der Straße", us: Average Joe / Average Jane, GB: Man on the clapham omnibus)
+-> Deskriptive Auswertungen zeigen (nur auf Durchschnittswerte abzielen!!!)
+-> Diskutieren, was diese Zahlen aussagen (bzw. ob sie überhaupt etwas "sinnvolles" Aussagen
+
+-> Maße der zentralen Tendenz (Mittelwert, Median, Modus)/ Variablentypen
+-> Abweichungsmaße (Standardabweichung, Quartile)
+
+
+Heights of men and women (3.6.15) -> Datensatz kann übernommen werden
+Heights of conscripts (3.6.2) -> Datensatz kann übernommen werden

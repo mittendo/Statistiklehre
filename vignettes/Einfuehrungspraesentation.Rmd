@@ -8,8 +8,7 @@ output:
     css: rmarkdown/templates/Rpres.css
     widescreen: yes
     incremental: yes
-    fig_width: 7
-    fig_height: 6
+runtime: shiny
 ---
 
 <!--
@@ -33,12 +32,62 @@ Gliederung
 An dieser Stelle sollte vor allem die Motivation für eine qualifizierte Methodenausbildung erläutert werden: Nämlich (Vorläufige) Wege erarbeiten, die eine eigenständige Urteilsfindung bei politikwissenschaftlichen Sachverhalten und Streitfragen ermöglichen.
 </div>
 
+Ein Beispiel vorab
+======================
+
+## Sind weibliche Stürme tödlicher?
+```{r Himicanes einlesen, echo=FALSE, warning=FALSE, message=FALSE}
+library(gdata)
+library(ggplot2)
+library(Statistiklehre)
+#library(mgcv)
+
+# # Read in the data
+# Data=read.xls("data/pnas.1402786111.sd01.xlsx", nrows=92, as.is=TRUE)
+# Data$Category=factor(Data$Category)
+# Data$Gender_MF=factor(Data$Gender_MF, labels = c('f', 'm'))
+# #Data$ColourMF=c("lightblue", "pink")[as.numeric(Data$Gender_MF)]
+# Data$ColourMF=c("blue", "red")[as.numeric(Data$Gender_MF)]
+# BigH=which(Data$alldeaths>100) # Select hurricanes with > 100 deaths
+# # scale the covariates
+# Data$Minpressure.2014.sc=scale(Data$Minpressure_Updated.2014)
+# Data$NDAM.sc=scale(Data$NDAM)
+# Data$MasFem.sc=scale(Data$MasFem)
+#data("himicanes")
+```
+
+
+```{r, echo=FALSE}
+load("../data/himicanes.rda")
+qplot(Year, alldeaths,  data=himicanes, color=Gender_MF, size=I(3))+ scale_colour_manual(values=c("blue", "red"))
+# inputPanel(
+#   selectInput("n_breaks", label = "Number of bins:",
+#               choices = c(10, 20, 35, 50), selected = 20),
+#   
+#   sliderInput("bw_adjust", label = "Bandwidth adjustment:",
+#               min = 0.2, max = 2, value = 1, step = 0.2)
+# )
+# 
+# renderPlot({
+#   hist(faithful$eruptions, probability = TRUE, breaks = as.numeric(input$n_breaks),
+#        xlab = "Duration (minutes)", main = "Geyser eruption duration")
+#   
+#   dens <- density(faithful$eruptions, adjust = input$bw_adjust)
+#   lines(dens, col = "blue")
+# })
+```
+
+
+
 # Empirische Sozialforschung
 <div class="notes">
 Zur ersten Sitzung (Tutorium?): Assessment mit Aufgaben aus Realschulabschluss- und Hauptschulabschlussklausuren!
 
 Ergebnisses sind Assessment, gelten nicht als Test!
 </div> 
+
+
+
 ## Wiederholung: Was ist empirische Forschung
 - Empirie steht im Gegensatz zur "reinen Anschauung", zur Theorie.
 - Empirische Sozialforschung bedeutet: Ein Bündel von Wegen zu haben, um wissenschaftliche Aussagen zu treffen
@@ -47,9 +96,9 @@ Ergebnisses sind Assessment, gelten nicht als Test!
 - D.h.: die Kriterien, nach denen etwas als "wahre" oder "falsche" Aussage beurteilt wird, sind offen gelegt und - innerhalb einer wissenschaftlichen "Sprechergemeinschaft" - anerkannt.
 
 <div class="notes">
-- Subjektiv: nur für die eigenen Sinne plausibel. Gewissheit nur für sich selbst.-> Hier Feyerabend erwähnen?
-- Objektiv: (Vorläufige) Gewissheit, die auch von anderen geteilt wird, die wissenschaftliche Gewissheit anstreben.
-- Gewissheit ist hier (anders als bei Feyerabend) nicht religiös, weltanschaulich, ideologisch, sondern: vorläufig, mit angebbarer Vorgehensweise und Kriterien. 
+>- Subjektiv: nur für die eigenen Sinne plausibel. Gewissheit nur für sich selbst.-> Hier Feyerabend erwähnen?
+>- Objektiv: (Vorläufige) Gewissheit, die auch von anderen geteilt wird, die wissenschaftliche Gewissheit anstreben.
+>- Gewissheit ist hier (anders als bei Feyerabend) nicht religiös, weltanschaulich, ideologisch, sondern: vorläufig, mit angebbarer Vorgehensweise und Kriterien. 
 -> Wissenschaftstheoretische Anklänge an Sprachpragmatismus (Peirce, Habermas), kritischen Rationalismus (Miller, Feyerabend), Immanuel Kant
 </div> 
 
@@ -151,9 +200,9 @@ Hier einen Link auf das Quiz aus dem letzten Semester einfügen
 - Wie hängen diese Merkmale miteinander zusammen?
 
 <div class="notes">
-- Deutlich sollte werden: Was ein "Merkmal" ist, muss schon am Anfang der Forschung klar sein.
-- Ein Beobachtungsobjekt kann beliebig viele Merkmale haben, aber es bleibt bei einer abzählbaren Zahl von Merkmalen!!!
-- Ohne Kategorien von Merkmalen (qualitativ!) lässt sich keine Messung durchführen!
+>- Deutlich sollte werden: Was ein "Merkmal" ist, muss schon am Anfang der Forschung klar sein.
+>- Ein Beobachtungsobjekt kann beliebig viele Merkmale haben, aber es bleibt bei einer abzählbaren Zahl von Merkmalen!!!
+>- Ohne Kategorien von Merkmalen (qualitativ!) lässt sich keine Messung durchführen!
 
 Suchen Sie Beispiele für Objekte und ihre Merkmale: Z.B. eine Schraube: Art (Holz- oder Metallschraube ..., Länge, Form des Gewindekopfes (Senkkopf oder Rundkopf, ...), Größe des Gewindekopfes, Material ...) 
 </div> 
@@ -162,9 +211,9 @@ Suchen Sie Beispiele für Objekte und ihre Merkmale: Z.B. eine Schraube: Art (Ho
 <div class="columns-2">
 ![Empirische Forschung](graphs/Empirische_Sozialforschung.png)
 <div class="notes">
-- Fachwissenschaft: Bestand an begrifflichen Kategorien, Kausalannahmen, Theorien, qualitativ und quantitativ gewonnenen Einsichten, die als vorläufig gültig angesehen werden und solche, die fraglich sind
-- Methodik: Bestand an anerkannten Arten, zu neuen Einsichten zu gelangen, so dass die Aussagen als gültig anerkannt werden.
-- Statistik: Hier verstanden im Sinne eines Teilbereichs der Stochastik als Subdisziplin mathematischer Hilfswissenschaft.
+>- Fachwissenschaft: Bestand an begrifflichen Kategorien, Kausalannahmen, Theorien, qualitativ und quantitativ gewonnenen Einsichten, die als vorläufig gültig angesehen werden und solche, die fraglich sind
+>- Methodik: Bestand an anerkannten Arten, zu neuen Einsichten zu gelangen, so dass die Aussagen als gültig anerkannt werden.
+>- Statistik: Hier verstanden im Sinne eines Teilbereichs der Stochastik als Subdisziplin mathematischer Hilfswissenschaft.
 </div> 
 
 - Quantitative Forschung verknüpft Fachwissenschaft (fachtheoretischer Rahmen), Untersuchungsweise (Methodik/Methodologie) und Statistik (mathematischer Theorierahmen)
@@ -176,10 +225,10 @@ Suchen Sie Beispiele für Objekte und ihre Merkmale: Z.B. eine Schraube: Art (Ho
 ## Verdeutlichung am Beispiel: Sind weibliche Stürme tödlicher als männliche?
 <div class="notes">
 Als gelungener Forschungsprozess soll gelten:
-- Übersetzung von fachwissenschaftlichem Wissen in eine Fragestellung. 
-- Übersetzung der Fragestellung in eine methodische Metasprache (aka kritischer Rationalismus) -> Identifizieren von Merkmalen und ermitteln einer angemessenen Untersuchungsanordnung. 
-- Übersetzen in Statistische Fachtermini (Variablen, Verteilungen, Stochastische Prozesse ...)
-- Rückübersetzung!
+>- Übersetzung von fachwissenschaftlichem Wissen in eine Fragestellung. 
+>- Übersetzung der Fragestellung in eine methodische Metasprache (aka kritischer Rationalismus) -> Identifizieren von Merkmalen und ermitteln einer angemessenen Untersuchungsanordnung. 
+>- Übersetzen in Statistische Fachtermini (Variablen, Verteilungen, Stochastische Prozesse ...)
+>- Rückübersetzung!
 </div> 
 
 - Beispiel einer guten wissenschaftlichen, methodisch eher kritisch zu bewertenden Studie
