@@ -8,8 +8,11 @@ output:
     css: rmarkdown/templates/Rpres.css
     widescreen: yes
     incremental: yes
-    fig_width: 7
-    fig_height: 6
+    fig_width: 6
+    fig_height: 5
+lang: ngerman
+csl: politische-vierteljahresschrift.csl
+bibliography: Kursvorbereitung.bib
 ---
 
 <!--
@@ -60,7 +63,7 @@ library(Statistiklehre)
 
 ```{r, echo=FALSE}
 load("../data/himicanes.rda")
-qplot(Year, alldeaths,  data=himicanes, color=Gender_MF, size=I(3))+ scale_colour_manual(values=c("blue", "red"))
+qplot(Year, alldeaths,  data=himicanes, color=Gender_MF, size=I(3))+ scale_colour_manual(values=c("blue", "red"))+scale_y_continuous(name="Gesamtzahl der Toten")+scale_x_continuous(name="Jahr")
 # inputPanel(
 #   selectInput("n_breaks", label = "Number of bins:",
 #               choices = c(10, 20, 35, 50), selected = 20),
@@ -77,7 +80,7 @@ qplot(Year, alldeaths,  data=himicanes, color=Gender_MF, size=I(3))+ scale_colou
 #   lines(dens, col = "blue")
 # })
 ```
-
+[@jung_female_2014]
 
 
 # Empirische Sozialforschung
@@ -210,16 +213,19 @@ Suchen Sie Beispiele für Objekte und ihre Merkmale: Z.B. eine Schraube: Art (Ho
 
 ## Zusammenhang von quantitativer Forschung und Fachwissenschaft {.smaller}
 <div class="columns-2">
+
 ![Empirische Forschung](graphs/Empirische_Sozialforschung.png)
-<div class="notes">
->- Fachwissenschaft: Bestand an begrifflichen Kategorien, Kausalannahmen, Theorien, qualitativ und quantitativ gewonnenen Einsichten, die als vorläufig gültig angesehen werden und solche, die fraglich sind
->- Methodik: Bestand an anerkannten Arten, zu neuen Einsichten zu gelangen, so dass die Aussagen als gültig anerkannt werden.
->- Statistik: Hier verstanden im Sinne eines Teilbereichs der Stochastik als Subdisziplin mathematischer Hilfswissenschaft.
-</div> 
 
 - Quantitative Forschung verknüpft Fachwissenschaft (fachtheoretischer Rahmen), Untersuchungsweise (Methodik/Methodologie) und Statistik (mathematischer Theorierahmen)
 - Begriff *Statistik* umfasst sowohl die mathematische Disziplin, als auch die ermittelten Ergebnisse, die in Form von "Statistiken" zusammengefasst werden.
 - Eine Statistik ist eine Zahl oder mehrere Zahlen, die Verteilungen von Werten einer Variable in einer Reihe von Messwerten (verkürzt) zusammenfasst und eine Entscheidung ermöglicht. 
+</div> 
+
+<div class="notes">
+>- Fachwissenschaft: Bestand an begrifflichen Kategorien, Kausalannahmen, Theorien, qualitativ und quantitativ gewonnenen Einsichten, die als vorläufig gültig angesehen werden und solche, die fraglich sind
+>- Methodik: Bestand an anerkannten Arten, zu neuen Einsichten zu gelangen, so dass die Aussagen als gültig anerkannt werden.
+>- Statistik: Hier verstanden im Sinne eines Teilbereichs der Stochastik als Subdisziplin mathematischer Hilfswissenschaft.
+
 </div> 
 
 
@@ -239,7 +245,7 @@ Als gelungener Forschungsprozess soll gelten:
 
 ## Ergebnis der Studie
 
-Hier die Ergebnistabelle!!!
+![Modell der Himicanes Studie](graphs/himicanes_models.png)
 <div class="notes">
 Nach der Frage erst die Plausibilität diskutieren! Aus Alltagswissen und fachwissenschaftlicher Sicht sollte man skeptisch sein!
 Danach: Diskussion der Ergebnisse. Klar machen: ist nur die erste Hälfte der Studie, Ziel: Experimentelle Untersuchung der (psychometrischen) Einstellungen / Theoretischen Annahmen zum Geschlecht der Hurricanes.
@@ -247,13 +253,11 @@ Danach: Diskussion der Ergebnisse. Klar machen: ist nur die erste Hälfte der St
 
 ## Die "Himicanes Studie" - warum sie wissenschaftlich vorbildlich ist
 
+Vgl. [@jung_female_2014]
 * Legt Daten offen
 * Ist reproduzierbar und nachvollziehbar
 * Macht eine wissenschaftliche Analyse wie aus dem Lehrbuch
-<div class="notes">
-Hier Link auf PNAS einfügen und demonstrieren
-Ebenfalls: Link auf die Rohdaten
-</div> 
+
 
 
 ## Die "Himicanes Studie" - warum sie methodisch problematisch ist
@@ -315,3 +319,6 @@ Formales zum Seminar
 - Modulabschluss: Klausur (90 Min)
 - Antwortwahlverfahren und Ergebnisse (Werte und Worte). 
 - Gezählt wird nur der Antwortbogen!
+
+# Literatur
+## Literaturhinweise
