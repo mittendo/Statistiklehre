@@ -8,7 +8,8 @@ output:
     css: rmarkdown/templates/Rpres.css
     widescreen: yes
     incremental: yes
-runtime: shiny
+    fig_width: 7
+    fig_height: 6
 ---
 
 <!--
@@ -256,6 +257,16 @@ Ebenfalls: Link auf die Rohdaten
 
 
 ## Die "Himicanes Studie" - warum sie methodisch problematisch ist
+
+* Macht eine wissenschaftliche Analyse wie aus dem Lehrbuch für Experimente …
+* … Ist aber eine sog. *Feldstudie*
+* Die Feldstudie liefert ein (von den Forschern) gewünschtes Ergebnis …
+* … die Darstellung endet, wo die Skepsis anfangen muss 
+
+<div class="notes">
+Darauf aufmerksam machen: Übersetzung der Frage in (methodisches) Studiendesign
+Vorgehensweise bei der Auswertung der Statistik
+</div> 
 
 * Macht eine wissenschaftliche Analyse wie aus dem Lehrbuch für Experimente …
 * … Ist aber eine sog. *Feldstudie*

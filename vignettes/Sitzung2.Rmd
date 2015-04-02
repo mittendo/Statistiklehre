@@ -1,5 +1,5 @@
----
-title: "Methoden II: Quantitative politikwissenschaftliche Forschung - Sitzung 2" 
+ ---
+title: "Methoden II: Quantitative politikwissenschaftliche Forschung - Verteilungen und Histogramme" 
 author: "Volker Mittendorf"
 date: "17. Februar 2015"
 output:
