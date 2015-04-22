@@ -67,8 +67,6 @@ Modulteil 2: POL 1.2b "Methoden II: Quantitative politikwissenschaftliche Method
     + Heights of conscripts (3.6.2) -> Datensatz kann übernommen werden
 1. Sitzung: Beobachtungsstudien und Experimente
     + Taste testing(5.3.3) -> nur übersetzen
-    + Surgeon General's report (5.4.1)  -> Datensatz kann übernommen werden
-    + Vietnam war opinions (3.5.2) -> muss auf Deutschland angepasst werden
     + Age adjustments (3.7.3) -> Kann übernommen werden
     + Literacy packets (6) -> Deutsche Zeitungsartikel suchen, vor allem im Tutorium machen!!
 1. Sitzung: Scatterplots und Korrelationen
@@ -87,6 +85,8 @@ Modulteil 2: POL 1.2b "Methoden II: Quantitative politikwissenschaftliche Method
     + Rare events (7.3.3)-> lässt sich anwenden
     + Color on the card (7.5.1)-> lässt sich anwenden
     + Lie detection (7.5.2)-> lässt sich anwenden
+    + Surgeon General's report (5.4.1)  -> Datensatz kann übernommen werden
+    + Vietnam war opinions (3.5.2) -> muss auf Deutschland angepasst werden
 1. Sitzung: Wahrscheinlichkeit: Zentraler Grenzwertsatz
     + Random digits vs. dice (7.2) -> lässt sich anwenden
     + Roulette (8.2.2) -> lässt sich anwenden
