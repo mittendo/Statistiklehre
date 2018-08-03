@@ -1,0 +1,250 @@
+---
+title: "Statistiklehre"
+author: "Volker Mittendorf André Schmale"
+date: "2\\. 8\\. 2018"
+output: html_document
+---
+
+# Lerninhalte
+
+## Qualitative Methoden
+
+### Vorab
+
+Material und Losgistik
+
+1. Tutor suchen
+2. Tutorium absprechen
+1. Seminarbeschreibung in Wusel
+2. Kurs in Moodle
+3. Texte einstellen in Moodle. Was kommt neu, was kommt weg?
+4. Welche Software soll genutzt werden, wie kommen die Leute dran?
+6. Wer führt in die Software ein.
+
+
+
+### Sitzung 1
+
+Ziel: 
+Leistungsanforderung:
+
+Inhalt                      | Didaktische Methode        | Material und Logistik
+--------------------------- + -------------------------- + ---------------------
+Einführung                  | Vortrag                    | Seminarplan
+                            |                            | Leistungsanforderungen
+Methodenbegriff             | Diskussion der             | Zum nächsten Mal: Flick, 39-55 
+Empiriebegriff              |   Erwartungen ans          | Software: 
+Idiographische Forschung    |   Seminar                  |   - Cmap
+Nomothetische Forschung     |                            |   - MaxQDA
+Wissenschaft                |                            |   - rstudio
+                            
+
+### Sitzung 2
+
+Inhalt                        | Didaktische Methode        | Material und Logistik
+----------------------------- + -------------------------- + ---------------------
+Empirische Methoden           |                            |  Flick
+Unterscheidung Quali-/ Quanti |                            | 
+                              |                            |  
+
+### Sitzung 3
+
+Inhalt                        | Didaktische Methode        | Material und Logistik
+----------------------------- + -------------------------- + ---------------------
+Wissenschaftliches Arbeiten   |                            | Leitfaden
+Gliederung und                |                            | 
+    Strategie von             |                            | 
+    Argumentationen           |                            | 
+Mindmap/C-Map                 |                            | 
+Präsentieren                  |                            | 
+Leitfaden                     |                            | 
+
+### Sitzung 4
+
+Inhalt                        | Didaktische Methode        | Material und Logistik
+----------------------------- + -------------------------- + ---------------------
+Belegen und Faktizität        |                            | Leitfaden
+Zitieren                      |                            | 
+Zitierprogramme               |                            | 
+Leitfaden                     |                            | 
+
+### Sitzung 5
+
+Inhalt                        | Didaktische Methode        | Material und Logistik
+----------------------------- + -------------------------- + ---------------------
+                              |                            | 
+Theoriebegriff und            |                            | Reichertz
+  Empiriebegriff
+Theoriebildung 
+  durch Induktion
+Theoriebildung 
+  durch Deduktion
+
+Reichertz
+
+### Sitzung 6
+
+Methodenüberblick
+
+Inhalt                        | Didaktische Methode        | Material und Logistik
+----------------------------- + -------------------------- + ---------------------
+                              |                            | 
+Weber                         |                            | Blatter/Janning/Wageman
+QDA
+Grounded Theory
+Ethnomethodologie
+Diskursforschung
+Habitus
+
+Blatter etc 
+
+
+### Sitzung 7 
+
+Inhalt                        | Didaktische Methode        | Material und Logistik
+----------------------------- + -------------------------- + ---------------------
+                              |                            | 
+Forschungsprozess             |                            | Lamnek
+Quali- vs. Quanti
+
+
+
+### Sitzung 8
+
+Inhalt                        | Didaktische Methode        | Material und Logistik
+----------------------------- + -------------------------- + ---------------------
+                              |                            | 
+Datenerhebung                 |                            | Praxisbuch
+
+
+### Sitzung 9
+
+Inhalt                        | Didaktische Methode        | Material und Logistik
+----------------------------- + -------------------------- + ---------------------
+                              |                            | 
+Daten transkribieren /        |                            | Praxisbuch
+      Aufbereiten
+
+### Sitzung 10
+
+Inhalt                        | Didaktische Methode        | Material und Logistik
+----------------------------- + -------------------------- + ---------------------
+                              |                            | 
+Daten Auswerten               |                            | Cornish/Gillespie/Zitoun
+                              |                            | Seminarevaluation
+
+
+### Sitzung 11
+
+Inhalt                        | Didaktische Methode        | Material und Logistik
+----------------------------- + -------------------------- + ---------------------
+                              |                            | 
+Andere Forschungsmethoden     |                            | Garz/Reuven
+Assessment Test
+
+
+### Sitzung 12
+
+Inhalt                        | Didaktische Methode        | Material und Logistik
+----------------------------- + -------------------------- + ---------------------
+                              |                            | 
+Methodenreflexion             |                            | King/Keohane/Verba
+
+
+
+
+### Sitzung 13
+
+Inhalt                        | Didaktische Methode        | Material und Logistik
+----------------------------- + -------------------------- + ---------------------
+                              |                            | 
+Seminarabschluss              |                            | 
+Evaluation
+Seminarkritik
+Ausblick
+
+
+
+
+## Quantitative Methoden
+
+### Sitzung 1
+
+Wiederholung: idiographische vs. nomothetische Forschung
+Seminarüberblick, Leistungsanforderungen
+
+### Sitzung 2
+
+Modell: King (anderer Text!!!!)
+
+Explanandum ~ Explanans + statistischer Fehler + Systematischer Fehler
+
+### Sitzung 3
+
+Explanandum:
+Forschungsfragen
+Hypothesen
+Variablen/Merkmale
+Grundgesamtheit, Stichprobe
+(Bestandsgrößen, Stromgröße)
+Skalierungen
+
+### Sitzung 4
+
+Explanans:
+Maße der zentralen Tendenz
+Abweichungsmaße
+
+### Sitzung 5
+
+Stochastischer Fehler:
+
+Verteilungen
+Gesetz der großen Zahl
+Zentraler Grenzwertsatz
+Residuen
+
+### Sitzung 6
+
+Systematischer Fehler:
+
+Studiendesigns
+Forschungsprozess
+
+### Sitzung 7
+
+Messtheorie
+
+### Sitzung 8
+
+
+Hypothesen und Hypothesentests
+Testtheorie
+
+
+### Sitzung 9 
+
+Probeklausur
+Evaluationsbögen
+
+### Sitzung 10
+ 
+Likelihood
+ 
+### Sitzung 11
+
+Modell revisited, Regressionsmodelle
+
+### Sitzung 12
+
+Modell revisited, Regressionsmodelle
+
+### Sitzung 13
+
+Seminarabschlus
+Evaluation
+Seminarkritik
+Ausblick
+
+
+### Klausur
